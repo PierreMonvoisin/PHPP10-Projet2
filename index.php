@@ -95,7 +95,9 @@ if (isset($_GET['submitButton']) && $_SERVER['REQUEST_METHOD'] === 'GET'){
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" name="submitButton" id="submitButton" class="btn">Valider</button>
+              <?php if (!$validity){ ?>
+                <button value="Valider" type="submit" name="submitButton" id="submitButton" class="btn" disabled>Valider</button>
+              <?php } ?>
             </div>
           </div>
         </form>
